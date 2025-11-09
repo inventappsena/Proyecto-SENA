@@ -1,47 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f7f9fc;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-
-    h1 {
-      color: #222;
-      margin-bottom: 0px;
-    }
-
-    iframe {
-      width: 90%;
-      height: 85vh;
-      border: 0px solid #ccc;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    footer {
-      margin-top: 10px;
-      font-size: 14px;
-      color: #666;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raíces - Tienda Local</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        #app-iframe {
+            width: 100%;
+            height: 100vh;
+            border: none;
+        }
+        .loading {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-  <iframe 
-    src="https://script.google.com/macros/s/AKfycbw4OiL8P7HRRrTwbCuFggOPtmYdZYYldz0A_k_crqyMK3Q_xkWgLAqd6rjgoTIGHZV5/exec" 
-    title="Contenido embebido"
-    allowfullscreen>
-  </iframe>
-
+    <div class="loading" id="loading">
+        <p>Cargando Raíces...</p>
+    </div>
+    <iframe 
+        id="app-iframe"
+        src="https://script.google.com/macros/s/AKfycbw4OiL8P7HRRrTwbCuFggOPtmYdZYYldz0A_k_crqyMK3Q_xkWgLAqd6rjgoTIGHZV5/exec"
+        onload="document.getElementById('loading').style.display='none'">
+    </iframe>
 </body>
 </html>
